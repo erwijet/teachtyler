@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.css")
+        script(src='env.js')
+        script(src="https://code.jquery.com/jquery-3.5.0.min.js")
+        script(defer, src='https://use.fontawesome.com/releases/v5.13.0/js/all.js')
+        block head
+    body
+        .hero.is-light.is-bold.is-fullheight
+            .hero-head
+                nav.navbar
+                    .container
+                        .navbar-brand
+                            a.navbar-item
+                                img(src="/img/hipster_indexer.png")
+            .hero-body
+                .container.has-text-centered
+                    block body

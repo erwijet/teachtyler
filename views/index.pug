@@ -1,0 +1,87 @@
+extends layout
+
+block head
+    script(src="/card.js")
+    script(src="/index.js")
+    style.
+        #fade-in-1 { 
+            animation: fadeIn ease 1s; 
+            animation-iteration-count: 1; 
+            animation-fill-mode: forwards; 
+        }
+        
+        #fade-in-2 { 
+            animation: fadeIn ease 2s; 
+            animation-iteration-count: 1; 
+            animation-fill-mode: forwards; 
+        }
+
+        #fade-in-3 { 
+            animation: fadeIn ease 3s; 
+            animation-iteration-count: 1; 
+            animation-fill-mode: forwards; 
+        }
+
+        #fade-in-4 { 
+            animation: fadeIn ease 3s; 
+            animation-iteration-count: 1; 
+            animation-fill-mode: forwards; 
+        }
+
+        #fade-in-5 { 
+            animation: fadeIn ease 2s; 
+            animation-iteration-count: 1; 
+            animation-fill-mode: forwards; 
+        }
+
+        #fade-in-6 { 
+            animation: fadeIn ease 1s; 
+            animation-iteration-count: 1; 
+            animation-fill-mode: forwards; 
+        }
+
+
+        @keyframes fadeIn { 
+            0% { 
+                opacity: 0; 
+            } 
+            100% { 
+                opacity: 1; 
+            } 
+        } 
+
+        /* button spin animation */
+
+        #submitbtn:hover {
+            -webkit-transition: -webkit-transform .8s ease-in-out;
+                    transition:         transform .8s ease-in-out;
+            -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+        }
+
+        /* hide scrollbar */
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+block body
+        h1.title Hipster Indexer Learning App
+        h2.subtitle Help develop the dataset used to power the Hipster Indexer.
+        .box#box
+            .field.has-addons.is-expanded
+                .control.has-icons-left.is-expanded
+                    input.input#searchbar(type="text", placeholder="Search for songs...")
+                    span.icon.is-small.is-left
+                        i.fab.fa-spotify
+                .control
+                    button.button.is-dark#submitbtn
+                        span.icon.is-small
+                            i.fas.fa-search
+        .columns
+            .column.is-one-third#song-1
+            .column.is-one-third#song-2
+            .column.is-one-third#song-3
+        .columns
+            .column.is-one-third#song-4
+            .column.is-one-third#song-5
+            .column.is-one-third#song-6

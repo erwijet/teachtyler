@@ -1,0 +1,48 @@
+extends layout
+
+block head
+    link(rel="stylesheet", href="/bulma-slider.min.css")
+    script(src="/bulma-slider.min.js")
+    script(src="/card.js")
+    script(src="/train.js")
+
+block body
+    .columns
+        .column.is-one-quarter#column-1
+            .card
+                .card-image
+                    figure.image.is-square
+                        img#albumart
+                .card-content
+                    .media
+                        .media-content
+                            p.title.is-4#title
+                            p.subtitle.is-6#artist
+                            p.subtitle.is-6#album
+                footer.card-footer
+        .column#column-2
+            .box(style="margin:5%")
+                p.title.is-4 In General
+                p.subtitle.is-6 Where does this song lie?
+                .columns
+                    .column
+                        button.button.is-fullwidth.is-dark#macro-0(onclick='macroSubmit(0);') Undiscovered
+                    .column
+                        button.button.is-fullwidth.is-warning#macro-1(onclick='macroSubmit(1);') Quirky
+                    .column
+                        button.button.is-fullwidth.is-danger#macro-2(onclick='macroSubmit(2);') Average
+                    .column
+                        button.button.is-fullwidth.is-info#macro-3(onclick='macroSubmit(3);') Radio
+                    .column
+                        button.button.is-fullwidth.is-success#macro-4(onclick='macroSubmit(4);') Smash Hit
+                .is-hidden#microsettings
+                    input.slider.is-fullwidth.is-info#mainslider(step="0.001", min='0', max='1', value='0.5', type="range")
+                    p.subtitle.is-6 I believe, in my eyes,
+                    p.title.is-4#output 3.50
+                    p.subtitle.is-6 
+                        |to be the trendiness value of this song
+                        |on a scale from 0 to 5.
+                    button.button.is-light#btndone
+                        span.icon.is-small
+                            i.fas.fa-check-circle
+                        span Speak My Voice
